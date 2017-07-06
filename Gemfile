@@ -14,6 +14,7 @@ end
 gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-will_paginate'
 gem 'simple_form'
+gem 'font-awesome-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.4'

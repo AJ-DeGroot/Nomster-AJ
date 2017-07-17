@@ -46,7 +46,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
-        <h4 class="modal-title" id="myModalLabel">Add a comment</h4>
+        <h4 class="modal-title" id="myModalLabel"></h4>
       </div>
       <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
         <div class="modal-body">
@@ -62,14 +62,37 @@
   </div>
 </div>
 
+<!-- Modal upload -->
+<div class="modal fade" id="myModalUpload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <%= simple_form_for @comment, url: place_photos_path(@place) do |f| %>
+        <div class="modal-body">
+          text goes here
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.submit "Upload Image", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 <!-- Button trigger modal -->
 <div class="col-10 offset-1 headroom">
   <h1 class="float-left">Comments</h1>
-<!--   <button type="button" class="btn btn-primary btn-md float-right side-room" data-toggle="modal" data-target="#myModalUpload">
-    Upload an image
-  </button> -->
+   <button type="button" class="btn btn-primary btn-md float-right side-room" data-toggle="modal" data-target="#myModalUpload">
+    Upload an Image
+  </button>
   <button type="button" class="btn btn-primary btn-md float-right" data-toggle="modal" data-target="#myModalComment">
-    Add a comment
+    Add a Comment
   </button>
 </div>
 

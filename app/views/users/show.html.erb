@@ -13,3 +13,19 @@
   <div class="clear"></div>
   <br />
 </div>
+
+<h1 class="text-center headroom-xtra">My Comments</h1>
+<div class="row headroom remove-right-margin">
+  <% @user.comments.each do |comment| %>
+    <div class="col-10 offset-1 col-sm-5">
+      <h2 class="text-center headroom-xtra footroom-minus"><%= link_to comment.place.name, place_path(comment.place) %></h2>
+      <blockquote>
+        <% if comment.humanized_rating.present? %>
+          <b><%= comment.humanized_rating %></b> -
+        <% end %>
+        <%= comment.message %>
+        <small><%= comment.user.email %></small>
+      </blockquote>
+    </div>
+  <% end %>
+</div>

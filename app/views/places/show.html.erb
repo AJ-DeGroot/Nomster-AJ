@@ -29,12 +29,15 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKvnAhP7uMZ7VQude3trFGEEB5wP1rSYc&callback=initMap">
     </script>
 
-<div class="row">
+      <div class="row">
 
-    <div id="map"></div>
-  <% end %><br />
+  <div id="map"></div>
 
-  <div class="clear"></div>
+  <% else %>
+    <div class="row">
+  <% end %>
+
+<div class="clear"></div>
 
 
   <% @place.photo.each do |photo| %>
@@ -53,7 +56,8 @@
       <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger' %>
     <% end %>
   </div><br /><br />
-</div>
+  </div>
+
 
 <!-- Modal comment -->
 <div class="modal fade" id="myModalComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

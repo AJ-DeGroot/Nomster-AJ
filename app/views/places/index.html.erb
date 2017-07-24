@@ -1,3 +1,5 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -41,7 +43,7 @@
     <p><%= place.description %></p><br />
 
     <% if place.user.present? %>
-      <small><%= place.user.email %></small>
+      <small><% place.user.email %></small>
     <% end %>
 
     <% if place.comments.present? %>
@@ -51,7 +53,7 @@
             <b><%= place.comments.last.humanized_rating %></b> -
           <% end %>
           <%= place.comments.last.message %>
-          <small><%= place.comments.last.user.email %></small>
+          <small><% place.comments.last.user.email %></small>
         </blockquote>
       </div>
     <% end %>

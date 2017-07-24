@@ -55,6 +55,9 @@ margin-top: 20px;
 #map {
       height: 300px;
       width: 600px;
+      margin-right: 10px;
+      margin-bottom: 30px;
+      margin-left: 20px;
     }
 
 .clear{
@@ -122,8 +125,28 @@ blockquote p {
   margin-bottom: 20px;
 }
 
-.place_images {
-  max-width: 200px;
+.place_images img{
+  max-width: 130px;
   width: auto;
   height: auto;
+  margin: 0px 10px 10px 20px;
+}
+
+.upload_button{
+  margin-bottom: 5px;
+}
+
+.comments{
+  margin-top: -4px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.caption_spacing {
+  word-wrap: break-word;
+  max-width: 130px;
+  width: auto;
+  margin-left: 20px;
 }

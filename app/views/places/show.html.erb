@@ -30,6 +30,17 @@
     <div id="map"></div>
   <% end %><br />
 
+  <div class="clear"></div>
+
+<div class="row">
+  <% @place.photo.each do |photo| %>
+    <div class="col-10 offset-1 col-sm-5 headroom place_images">
+        <%= image_tag photo.image, class: 'img-fluid' %> -
+          <%= photo.caption %>
+    </div>
+  <% end %>
+</div>
+
   <div class="float-right">
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
@@ -95,17 +106,6 @@
   <button type="button" class="btn btn-primary btn-md float-right" data-toggle="modal" data-target="#myModalComment">
     Add a Comment
   </button>
-</div>
-
-<div class="clear"></div>
-
-<div class="row">
-  <% @place.photos.each do |photo| %>
-    <div class="col-10 offset-1 col-sm-5 headroom">
-        <%= image_tag photo.image, class: 'img-fluid' %> -
-          <%= photo.caption %>
-    </div>
-  <% end %>
 </div>
 
 <div class="clear"></div>

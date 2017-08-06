@@ -9,4 +9,15 @@
     <br />
     <%= f.submit 'Update', class: 'btn btn-primary form-btn' %>
   <% end %>
+
+<div class="row">
+  <% @place.photo.each do |photo| %>
+    <div class="image_box">
+        <%= link_to image_tag(photo.image), place_photo_path(@place, photo), method: :delete, class: 'img-fluid place_images' %>
+          <div class="caption_spacing"><% if photo.caption.present? %>
+            - <%= photo.caption %>
+          <% end %></div>
+    </div>
+  <% end %>
+  </div>
 </div>

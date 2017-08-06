@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root 'places#index'
   resources :places do
     resources :comments, only: :create
-    resources :photos, only: :create
+    resources :photos, only: [:create, :destroy]
+    # delete 'photos#destroy', as: :destroy_place_photo_path
   end
   resources :users, only: :show
 end
